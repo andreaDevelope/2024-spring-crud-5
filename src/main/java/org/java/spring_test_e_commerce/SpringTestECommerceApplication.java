@@ -161,6 +161,7 @@ public class SpringTestECommerceApplication implements CommandLineRunner{
 		System.out.println("-------------------------------------------------------");
 		products.forEach(System.out::println);
 
+
 		// RELAZIONO LA TABELLA PADRE ORDERS A PRODUCTS
 		Optional<Orders> optO3 = os.getOrderByIdWithProducts(3);
 
@@ -175,6 +176,8 @@ public class SpringTestECommerceApplication implements CommandLineRunner{
 		o3.addProduct(p3);
 		o3.addProduct(p4);
 		os.save(o3);
+
+		System.out.println("full price order3: " + o3.getFullPrice());
 
 		//RIMUOVO LA RELAZIONE TRA ORDER E PRODUCT
 		o3.removeProduct(p4);
